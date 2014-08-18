@@ -153,6 +153,7 @@ The variables included in this dataset are:
   day and calculate and report the mean and median total number of steps taken per day
   
     Here is a histogram of the total number of steps taken each day.
+    
 
     ```{r}
   daily_total <- tapply(data$steps, data$date, sum)
@@ -160,6 +161,7 @@ The variables included in this dataset are:
     ```
 
     The mean and median are calculated as follows:
+    
   
     ```{r}
    mean_per_day <- mean(daily_total, na.rm=TRUE)
@@ -211,12 +213,17 @@ The variables included in this dataset are:
   
   
     ```{r, echo=TRUE, fig.height=10, fig.width=10}
-weekend_mean <- tapply(data$steps[data$daytype=="weekend"], data$interval[data$daytype=="weekend"], mean)
-weekday_mean <- tapply(data$steps[data$daytype=="weekday"], data$interval[data$daytype=="weekday"], mean)
+            weekend_mean <- tapply(data$steps[data$daytype=="weekend"], 
+                                   data$interval[data$daytype=="weekend"], mean)
+            weekday_mean <- tapply(data$steps[data$daytype=="weekday"], 
+                                   data$interval[data$daytype=="weekday"], mean)
 
-par(mfrow=c(2,1))
-plot(intervals, weekend_mean, type="l", xlab="Interval", ylab="Number of steps", main="weekend")
-plot(intervals, weekday_mean, type="l", xlab="Interval", ylab="Number of steps", main="weekday")
+     par(mfrow=c(2,1))
+     plot(intervals, weekend_mean, type="l", xlab="Interval", ylab="Number of steps",   
+      main="weekend")
+     plot(intervals, weekday_mean, type="l", xlab="Interval", ylab="Number of steps",    
+      main="weekday")
+    
     ```
 
   <b>Observation</b> 

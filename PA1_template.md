@@ -165,6 +165,7 @@ The variables included in this dataset are:
   day and calculate and report the mean and median total number of steps taken per day
   
     Here is a histogram of the total number of steps taken each day.
+    
 
     
     ```r
@@ -175,6 +176,7 @@ The variables included in this dataset are:
     ![plot of chunk unnamed-chunk-10](./PA1_template_files/figure-html/unnamed-chunk-10.png) 
 
     The mean and median are calculated as follows:
+    
   
     
     ```r
@@ -229,12 +231,16 @@ The variables included in this dataset are:
   
     
     ```r
-    weekend_mean <- tapply(data$steps[data$daytype=="weekend"], data$interval[data$daytype=="weekend"], mean)
-    weekday_mean <- tapply(data$steps[data$daytype=="weekday"], data$interval[data$daytype=="weekday"], mean)
+            weekend_mean <- tapply(data$steps[data$daytype=="weekend"], 
+                                   data$interval[data$daytype=="weekend"], mean)
+            weekday_mean <- tapply(data$steps[data$daytype=="weekday"], 
+                                   data$interval[data$daytype=="weekday"], mean)
     
-    par(mfrow=c(2,1))
-    plot(intervals, weekend_mean, type="l", xlab="Interval", ylab="Number of steps", main="weekend")
-    plot(intervals, weekday_mean, type="l", xlab="Interval", ylab="Number of steps", main="weekday")
+     par(mfrow=c(2,1))
+     plot(intervals, weekend_mean, type="l", xlab="Interval", ylab="Number of steps",   
+      main="weekend")
+     plot(intervals, weekday_mean, type="l", xlab="Interval", ylab="Number of steps",    
+      main="weekday")
     ```
     
     ![plot of chunk unnamed-chunk-13](./PA1_template_files/figure-html/unnamed-chunk-13.png) 
