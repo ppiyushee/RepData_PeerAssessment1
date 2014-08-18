@@ -160,7 +160,7 @@ The variables included in this dataset are:
   hist(daily_total)
     ```
 
-    The mean and median are calculated as follows:
+  The mean and median are calculated as follows:
     
   
     ```{r}
@@ -193,6 +193,7 @@ The variables included in this dataset are:
     weekend day.
    
     
+      
     ```{r, echo=TRUE}
     daytype <- function(date) {
     if (weekdays(as.Date(date)) %in% c("Saturday", "Sunday")) {
@@ -201,7 +202,7 @@ The variables included in this dataset are:
         "weekday"
      }
     }
-   data$daytype <- as.factor(sapply(data$date, daytype))
+     data$daytype <- as.factor(sapply(data$date, daytype))
     ```
 
 

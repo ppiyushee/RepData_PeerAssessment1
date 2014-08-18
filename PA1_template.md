@@ -175,7 +175,7 @@ The variables included in this dataset are:
     
     ![plot of chunk unnamed-chunk-10](./PA1_template_files/figure-html/unnamed-chunk-10.png) 
 
-    The mean and median are calculated as follows:
+  The mean and median are calculated as follows:
     
   
     
@@ -209,6 +209,7 @@ The variables included in this dataset are:
     weekend day.
    
     
+      
     
     ```r
     daytype <- function(date) {
@@ -218,7 +219,7 @@ The variables included in this dataset are:
         "weekday"
      }
     }
-       data$daytype <- as.factor(sapply(data$date, daytype))
+     data$daytype <- as.factor(sapply(data$date, daytype))
     ```
 
 
